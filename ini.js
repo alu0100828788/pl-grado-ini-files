@@ -62,6 +62,7 @@ function lexer(input) {
       out.push({ type: 'comments', match: m });
     }
     else if (m = nameEqualValue.exec(input)) {
+      /* while (match casa con /\\$/) concatena la siguiente línea */
       input = input.substr(m.index+m[0].length);
       out.push({ type: 'nameEqualValue', match: m });
     }
